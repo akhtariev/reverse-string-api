@@ -23,7 +23,7 @@ public class ReverseStringApp {
    */
   @GetMapping("/reverse/{str}")
   public ResponseEntity<String> reverseString(@PathVariable(value = "str") String toReverse) {
-    if (toReverse.isEmpty() || toReverse.isBlank()) {
+    if (toReverse == null || toReverse.isEmpty() || toReverse.isBlank()) {
       return ResponseEntity.badRequest().body("The string is malformed.");
     }
 
