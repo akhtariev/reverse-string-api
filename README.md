@@ -8,16 +8,16 @@ Then, `localhost:8080/reverse/<string>` will provide the reversed string
 
 
 ### Thought process:
-1. Read about SpringBoot and Maven more in depth
+1. Read about SpringBoot and Maven more in-depth
 2. Decided to choose VS Code instead of an IDE
 3. Installed all the required frameworks: JDK, Maven, VS Code extensions
 4. Set up system environment variables
 5. Followed the tutorial on the SpringBoot website
 6. Realized that the tutorial has some additional functionality that this app does not need
-7. Found a simpler example and refactored the base of the app
+7. Found a simpler example and refactored the base of the app to avoid using the controller and a separate application class
 8. Wrote basic tests
 9. Implemented the actual "reverse string" functionality
-10. Tested, fixed minor bugs and made minor desing changes, the requirement for which was discovered after running the tests.
+10. Tested, fixed minor bugs, and made minor design changes, the requirement for which was discovered after running the tests.
 11. Wrote additional tests which passed right away
 12. Tested with Postman
 
@@ -28,17 +28,19 @@ Then, `localhost:8080/reverse/<string>` will provide the reversed string
 
 ### Design and implementation choices:
 
+##### Avoid creating additional classes or using OOP
+As mentioned previously in the thought process, I discovered that the task is simple enough and the codebase is small enough so I decided to avoid overusing MVC or OOP and just accomplish the task directly in the endpoint implementation. In my previous experience, I received a lot of comments in reviews for overusing OOP or design patterns. As a result, I am aiming for simplicity in my code.
+
 ##### Using TDD-like approach
 I decided to first write the tests and then implement the reversing functionality. Although I knew one of the most optimal solutions from doing Leetcode,
 I was surprised to see half of my tests failing after running them for the first time. Working in a TDD-like approach probably helped.
 
 ##### Edge case handling
-I discovered that if no string is supplied after the `localhost:8080/reverse/`, 404 is returned by default so it should be impossible for 
-the `toReverse` string in the code to be of length 0 but decided to handle that case as a sanity check
+I discovered that if no string is supplied after the `localhost:8080/reverse/`, 404 is returned by default so it should be impossible for the `toReverse` string in the code to be of length 0 but decided to handle that case as a sanity check
 
 Returning bad request (400) when the string consists of white spaces
 
-Supporting both non-alphanumeric and alpahnumeric characters
+Supporting both non-alphanumeric and alphanumeric characters
 
 Supporting trailing white spaces (not trimming)
 
