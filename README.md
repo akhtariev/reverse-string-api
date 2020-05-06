@@ -22,8 +22,9 @@ Then, `localhost:8080/reverse/<string>` will provide the reversed string
 12. Tested with Postman
 
 ### Challenges:
+- Using Java after mostly working with C++ and JavaScript in the past year.
 - Familiarizing myself with the new frameworks: SpringBoot, Maven
-- Installing everything in VS Code. Prior to that I mainly used Intellij for Java but since I didn't have it installed on my personal machine decided to learn how it works in the new environment.
+- Installing everything in VS Code. Prior to that I mainly used Intellij for Java but since I didn't have it installed on my personal machine, I decided to learn how it works in the new environment.
 
 ### Design and implementation choices:
 
